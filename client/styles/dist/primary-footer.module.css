@@ -1,0 +1,8 @@
+.footer {
+  z-index: 100;
+  width: 100vw;
+  text-align: center;
+  padding: 20px;
+  background-color: blanchedalmond;
+  bottom: 0px;
+}

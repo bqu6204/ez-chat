@@ -1,0 +1,59 @@
+$breakpoint: 700px;
+
+.header{
+    background-color: rgb(235, 235, 235, 0.7);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    min-height: 16px;
+    width :100vw;
+    padding: 0 10%;
+
+    z-index: 100;
+
+    transition:all 0.3s ease;
+
+    &.scrolled{ 
+        height:8vh;
+    }
+}
+
+.menu { 
+    margin-left: auto;
+
+    @media screen and (max-width:$breakpoint ) {
+        position:absolute;
+        display: flex;
+        flex-direction: column;
+        top: 100%;
+        left: 100vw;
+        width: 100vw;
+        background-color: white;
+
+        transition: all 0.3s ease;
+    
+        & > * {
+            padding:30px;
+        }
+
+        &.isMenuOpen {
+            left: 0;
+        }
+    }
+}
+
+
+
+.menu_button{
+    padding: 16px 20px;
+}
+
+.burger{
+    display:none;
+    @media screen and (max-width:$breakpoint ) {
+        display: block;
+        margin-left: auto;
+        
+    }
+}

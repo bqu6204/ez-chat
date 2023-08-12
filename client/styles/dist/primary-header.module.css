@@ -1,0 +1,51 @@
+.header {
+  background-color: rgba(235, 235, 235, 0.7);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  min-height: 16px;
+  width: 100vw;
+  padding: 0 10%;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+.header.scrolled {
+  height: 8vh;
+}
+
+.menu {
+  margin-left: auto;
+}
+@media screen and (max-width: 700px) {
+  .menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 100vw;
+    width: 100vw;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  .menu > * {
+    padding: 30px;
+  }
+  .menu.isMenuOpen {
+    left: 0;
+  }
+}
+
+.menu_button {
+  padding: 16px 20px;
+}
+
+.burger {
+  display: none;
+}
+@media screen and (max-width: 700px) {
+  .burger {
+    display: block;
+    margin-left: auto;
+  }
+}

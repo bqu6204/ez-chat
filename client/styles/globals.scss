@@ -1,0 +1,33 @@
+:root {
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+    min-height: 100vh;
+}
+
+html, body, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+
+.next_image_box {
+    position: relative;
+}
+
+.next_image_cover{
+    object-position: center;
+    object-fit: cover;
+}
+
+.next_image_contain{
+    object-position: center;
+    object-fit: contain;
+}
+
+.next_image_fill{
+    object-position: center;
+    object-fit:fill;
+}
