@@ -30,6 +30,7 @@ const PrimaryHeader: React.FC = () => {
           alt="logo"
           width={150}
           height={60}
+          priority
         />
         This is the logo.
       </h1>
@@ -37,7 +38,7 @@ const PrimaryHeader: React.FC = () => {
         className={`${styleSheet.menu} ${isMenuOpen && styleSheet.isMenuOpen}`}
       >
         {menu.map((link) => (
-          <Button variant="text" href={link.href}>
+          <Button variant="text" href={link.href} key={link.href}>
             {link.text}
           </Button>
         ))}
