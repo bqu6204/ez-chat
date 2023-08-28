@@ -8,6 +8,10 @@ interface ISwiper {
   style?: CSSProperties;
 }
 
+interface ISwiperSlide {
+  children: ReactNode;
+}
+
 const Swiper: React.FC<
   ISwiper &
     Partial<SwiperOptions> &
@@ -39,10 +43,6 @@ const Swiper: React.FC<
     </swiper-container>
   );
 };
-
-interface ISwiperSlide {
-  children: ReactNode;
-}
 
 const SwiperSlide: React.FC<
   ISwiperSlide &

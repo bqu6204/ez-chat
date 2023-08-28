@@ -2,6 +2,11 @@
   font-family: sans-serif;
   letter-spacing: 0.5px;
   min-height: 100vh;
+  --swiper-pagination-color: var(--swiper-theme-color);
+  --swiper-navigation-color:var(--swiper-theme-color);
+  --swiper-theme-color: #ef5350;
+  --swiper-navigation-size:10px;
+  --swiper-navigation-sides-offset:25px;
 }
 
 html, body, * {

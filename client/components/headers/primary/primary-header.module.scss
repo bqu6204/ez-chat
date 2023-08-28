@@ -1,4 +1,6 @@
-$breakpoint: 700px;
+@use '../../../styles/variables' as var;
+
+$header_height: 10vh;
 
 .header{
     background-color: rgb(235, 235, 235, 0.7);
@@ -9,27 +11,49 @@ $breakpoint: 700px;
     min-height: 16px;
     width :100vw;
     padding: 0 10%;
-
     z-index: 100;
 
-    transition:all 0.3s ease;
+    top: 0;
+    left:0;
 
-    &.scrolled{ 
-        height:8vh;
+    &::before{
+        content: '';
+        position:fixed;
+        top: $header_height;
+        left: 0px;
+        height: 0px;
+        width: 0px;
+        transition: background-color 0.3s ease,
+        height 0s linear 0.3s,
+        width 0s linear 0.3s;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    &.isMenuOpen::before{
+        height: 100vh;
+        width: 100vw;
+        background-color:rgb(255, 255, 255, 0.7);
+
+        transition: background-color 0.3s ease,
+        height 0s linear 0s,
+        width 0s linear 0s;
     }
 }
+
+
 
 .menu { 
     margin-left: auto;
 
-    @media screen and (max-width:$breakpoint ) {
-        position:absolute;
+    @media screen and (max-width:var.$breakpoint ) {
+        position:fixed;
         display: flex;
         flex-direction: column;
-        top: 100%;
+        top: $header_height;
         left: 100vw;
         width: 100vw;
         background-color: white;
+        z-index: 100;
 
         transition: all 0.3s ease;
     
@@ -51,9 +75,14 @@ $breakpoint: 700px;
 
 .burger{
     display:none;
-    @media screen and (max-width:$breakpoint ) {
+    @media screen and (max-width:var.$breakpoint ) {
         display: block;
         margin-left: auto;
         
+    }
+}
+.chatBtn{
+    @media screen and (min-width:var.$breakpoint ) {
+        margin-left: 30px;
     }
 }

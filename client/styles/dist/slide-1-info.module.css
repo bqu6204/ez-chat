@@ -1,0 +1,68 @@
+.wrapper {
+  z-index: 2;
+  position: absolute;
+  color: white;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max(50vw, 400px);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.wrapper .title {
+  text-align: center;
+  font-size: 5rem;
+  color: white;
+  animation: fadein 0.5s linear;
+}
+@keyframes fadein {
+  0% {
+    transform: scale(2.5);
+    opacity: 0;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 5px 5px 8px rgb(0, 0, 0);
+  }
+}
+
+.faders {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.charFader {
+  color: rgba(235, 235, 235, 0.7);
+  font-weight: 300;
+  letter-spacing: 1px;
+  height: 1.5rem;
+}
+
+.chatBtn {
+  position: relative;
+  margin: 50px auto;
+  padding: 10px 50px;
+  display: block;
+  cursor: pointer;
+  pointer-events: auto;
+  animation: fadeup 1.5s ease;
+  opacity: 1;
+}
+
+@keyframes fadeup {
+  0% {
+    opacity: 0;
+    top: 25px;
+  }
+  50% {
+    opacity: 0;
+    top: 25px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}

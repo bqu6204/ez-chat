@@ -3,6 +3,7 @@ import Image from "next/image";
 import BurgerBar from "@/components/burger-bars/burger-bar";
 import styleSheet from "@/styles/dist/primary-header.module.css";
 import { useState } from "react";
+import Link from "next/link";
 
 const menu = [
   {
@@ -19,19 +20,23 @@ const PrimaryHeader: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className={styleSheet.header}>
+    <header
+      className={`${isMenuOpen && styleSheet.isMenuOpen} ${styleSheet.header}`}
+    >
       <h1
         className="next_image_box"
         style={{ color: "transparent", fontSize: "0.1px" }}
       >
-        <Image
-          src={"/logo.png"}
-          title="logo"
-          alt="logo"
-          width={150}
-          height={60}
-          priority
-        />
+        <Link href="/">
+          <Image
+            src={"/logo.png"}
+            title="logo"
+            alt="logo"
+            width={150}
+            height={60}
+            priority
+          />
+        </Link>
         This is the logo.
       </h1>
       <nav
@@ -43,7 +48,11 @@ const PrimaryHeader: React.FC = () => {
           </Button>
         ))}
 
-        <Button variant={"contained"} size="large">
+        <Button
+          className={styleSheet.chatBtn}
+          variant={"contained"}
+          size="large"
+        >
           馬上聊天
         </Button>
       </nav>
